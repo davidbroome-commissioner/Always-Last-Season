@@ -93,6 +93,19 @@
     display: block;
   }
 
+  .header-creator {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 8px;
+    opacity: 0.8;
+  }
+
+  .header-creator strong {
+    color: var(--green);
+    font-weight: 600;
+  }
+
   .header-sub {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 16px;
@@ -1164,7 +1177,8 @@
   <div class="header-inner">
     <div class="badge">⚽ Fantasy League</div>
     <h1>Always<span>Last Season</span></h1>
-    <p class="header-sub">Premier League 1995/96 · FM18 Simulation · 12 Managers</p>
+    <p class="header-sub">Premier League 1995/96 · FM Simulation · 12 Managers</p>
+    <p class="header-creator">A game invented by <strong>David Broome</strong> · Administered by the Always Last Season Commissioner</p>
   </div>
   <div class="pitch-deco"></div>
 </header>
@@ -1186,7 +1200,7 @@
   <!-- ══ OVERVIEW ══ -->
   <section id="overview" class="section active">
     <div class="section-title">League Overview</div>
-    <div class="section-desc">Round 1 complete · Round 2 bidding open · Season simulation pending</div>
+    <div class="section-desc">Round 1 complete · Round 2 bidding open · Season simulation pending · A game invented by David Broome</div>
 
     <div class="stats-row">
       <div class="stat-card">
@@ -1335,7 +1349,7 @@
   <!-- ══ MATCH REPORTS ══ -->
   <section id="reports" class="section">
     <div class="section-title">Match Reports</div>
-    <div class="section-desc">Weekly results, ratings and drama from the FM18 simulation</div>
+    <div class="section-desc">Weekly results, ratings and drama from the FM simulation</div>
 
     <div class="holding-screen">
       <div class="holding-icon">⚽</div>
@@ -1441,7 +1455,7 @@
 </div>
 
 <footer>
-  Always Last Season Fantasy League · Premier League 95/96 · Powered by FM18 · MadScientist Database
+  Always Last Season Fantasy League · Premier League 95/96 · A game invented by David Broome · Simulated on Football Manager
 </footer>
 
 <script>
@@ -1529,7 +1543,7 @@ const managers = [
     id: 'meyers', name: 'Meyers', fullname: "I'll Be Back Four", manager: 'P. Meyers',
     players: 4, spent: 13.0, remaining: 27.0, toFill: 12,
     rating: 'B', ratingLabel: 'Quality Over Quantity',
-    analysis: 'Only 4 players but arguably the highest CM2-rated group of any manager. Schmeichel sniped from Cotton by just £0.2m, Bergkamp at bargain £3.5m, Kanchelskis at market rate, Juninho who is elite in the CM2 database. No strikers or defenders yet but £27m gives serious Round 2 firepower.',
+    analysis: 'Only 4 players but the quality is extraordinary — Schmeichel, Bergkamp, Kanchelskis and Juninho. Schmeichel sniped from Cotton by just £0.2m. No strikers or defenders yet but £27m gives serious Round 2 firepower. Quality over quantity, and the quality is exceptional.',
     squad: [
       {name:'Peter Schmeichel',pos:'GK',club:'Man Utd'},{name:'Dennis Bergkamp',pos:'ST',club:'Arsenal'},
       {name:'Andrei Kanchelskis',pos:'MF',club:'Everton'},{name:'Juninho Paulista',pos:'MF',club:'Middlesbrough'}
@@ -1539,7 +1553,7 @@ const managers = [
     id: 'davies', name: 'Davies', fullname: "Paul McGregor's Mullet", manager: 'M. Davies',
     players: 5, spent: 16.0, remaining: 24.0, toFill: 11,
     rating: 'B', ratingLabel: 'Tactical Approach',
-    analysis: 'Won the 5-way bidding war for Ginola at £5m, plus Pearce, Bryan Roy, Wilcox and the genius £0 Daish. Five players but Ginola is a genuine star and Bryan Roy was elite in CM2 data. Lost on Irwin and Albert to deeper pockets. £24m remaining is strong.',
+    analysis: 'Won the 5-way bidding war for Ginola at £5m, plus Pearce, Bryan Roy, Wilcox and the genius £0 Daish. Five players but Ginola is a genuine star and Bryan Roy is a significantly underrated pick. Lost on Irwin and Albert to deeper pockets. £24m remaining is strong.',
     squad: [
       {name:'David Ginola',pos:'MF',club:'Newcastle'},{name:'Stuart Pearce',pos:'DF',club:'Nottm Forest'},
       {name:'Bryan Roy',pos:'MF',club:'Nottm Forest'},{name:'Jason Wilcox',pos:'MF',club:'Blackburn'},
@@ -2417,9 +2431,9 @@ const reviews = [
     verdict: 'decent', verdictText: '🤖 Playing 4D Chess (Apparently)',
     comparison: "Arsène Wenger circa 1996", compReason: "Arrived with continental ideas nobody else understood yet. Was laughed at. Will probably be right.",
     flames: '🔥🔥🔥', flameCaption: 'Trust the process. The process is terrifying.',
-    review: "Four players. <strong>FOUR.</strong> The squad currently has the structural integrity of a table with one leg, and yet those four players are <strong>Schmeichel, Bergkamp, Kanchelskis and Juninho</strong> — arguably the highest average CM2-rated group anyone assembled in Round 1.<br><br>The team name <strong>I'll Be Back Four</strong> is either a confident declaration that the full defensive unit is incoming, or the optimistic rallying cry of someone staring into an empty squad sheet.<br><br>The Schmeichel steal — pipping Cotton by exactly <em>£0.2m</em> — was the move of the round. Cotton built an entire Man Utd spine and then lost their goalkeeper by a rounding error. Somewhere, Cotton stared at a screen in silence for thirty seconds before typing something that was probably not suitable for a family group chat.<br><br>The strategy is either brilliant or completely deranged. Round 2 bids are in. Currently the first XI would feature Schmeichel, ten empty slots, and a very awkward atmosphere in the dressing room.",
-    good: 'Per player, the highest quality in the league. No contest whatsoever.',
-    bad: 'Currently unable to field a five-a-side team, let alone a 4-4-2'
+    review: "Four players. <strong>FOUR.</strong> The squad currently has the structural integrity of a table with one leg — but what a leg it is. <strong>Schmeichel, Bergkamp, Kanchelskis and Juninho</strong>. If you could only keep four players from the entire available pool, a strong argument exists that these are the four you would choose.<br><br>The team name <strong>I'll Be Back Four</strong> is a masterpiece — part Terminator, part football pun, part ominous promise to the rest of the league. Consider it a warning shot delivered with a smile.<br><br>The Schmeichel steal — pipping Cotton by exactly <em>£0.2m</em> — was the move of the round. Cotton built an entire Man Utd spine and then lost their goalkeeper by a rounding error. The precision of that bid suggests either exceptional research or an extremely fortunate instinct. Either way, the result is the same: the best goalkeeper in the league, secured.<br><br>Yes, the squad needs eleven more players. Yes, the first XI currently features Schmeichel and ten question marks. But with £27m in the bank and a very clear idea of what good looks like, Round 2 is where this squad gets serious. The foundation is elite. The build starts now.",
+    good: 'Per player, the highest quality in the league. The four best picks of the entire round, arguably.',
+    bad: 'Currently unable to field a five-a-side team — but the goalkeeper alone would probably keep a clean sheet anyway'
   },
   {
     id: 'davies',
@@ -2427,7 +2441,7 @@ const reviews = [
     verdict: 'decent', verdictText: '✂️ Style Over Substance (So Far)',
     comparison: "Ossie Ardiles", compReason: "Committed to attractive football regardless of practical consequences. Brilliant in patches, questionable overall.",
     flames: '🔥🔥', flameCaption: 'Business at the front, party at the back.',
-    review: "The team name <strong>Paul McGregor's Mullet</strong> is simultaneously the best and most accurate squad name in the league, because this team is currently all attacking flair at the front and absolutely nothing holding it together at the back.<br><br><strong>Ginola at £5m</strong> won a five-way bidding war, which tells you everything. Five managers looked at the same list and all thought David Ginola, yes, this is the priority. In FM he is extraordinary — pace, dribbling, crossing all maxed out. He will get standing ovations in matches his team loses 4-1.<br><br>The <strong>Liam Daish at £0m</strong> is the bid of the tournament. The gap between the glamour of Ginola and the workmanlike utility of Daish is so vast you could park Wembley in it. <strong>Bryan Roy</strong> is an extremely underrated pick — elite in the CM2 database — but Davies still has 11 positions to fill and the squad currently has the defensive solidity of a paper parasol in a thunderstorm.",
+    review: "The team name <strong>Paul McGregor's Mullet</strong> is simultaneously the best and most accurate squad name in the league, because this team is currently all attacking flair at the front and absolutely nothing holding it together at the back.<br><br><strong>Ginola at £5m</strong> won a five-way bidding war, which tells you everything. Five managers looked at the same list and all thought David Ginola, yes, this is the priority. In FM he is extraordinary — pace, dribbling, crossing all maxed out. He will get standing ovations in matches his team loses 4-1.<br><br>The <strong>Liam Daish at £0m</strong> is the bid of the tournament. The gap between the glamour of Ginola and the workmanlike utility of Daish is so vast you could park Wembley in it. <strong>Bryan Roy</strong> is a significantly underrated pick who will generate strong ratings all season — but Davies still has 11 positions to fill and the squad currently has the defensive solidity of a paper parasol in a thunderstorm.",
     good: 'Ginola will be the most entertaining player in the league by a significant margin',
     bad: 'Liam Daish is currently the defensive foundation. Let that sink in for a moment.'
   },
@@ -2447,9 +2461,9 @@ const reviews = [
     verdict: 'shaky', verdictText: '😬 Asleep at the Wheel',
     comparison: "Luiz Felipe Scolari at Chelsea", compReason: "Arrived with credentials, had the tools, somehow made far less of it than everyone expected.",
     flames: '🔥', flameCaption: 'The fire is barely lit.',
-    review: "<strong>Masterman</strong> has achieved the remarkable feat of spending £9m and ending up with only three players, which statistically means each player cost an average of £3m. That is the same as Cotton paid for Scholes, except Masterman got <strong>Ian Wright</strong> instead — who is 33, brilliant in bursts, and in FM has the durability of a Cadbury Flake in a sauna.<br><br>Seaman at £2.8m is genuinely excellent value. Anderton at £2m is fine. Ian Wright at £4.2m is a calculated risk on a 33-year-old whose pace attribute has been quietly declining since 1993.<br><br>The real problem is the <strong>13 positions still to fill</strong> with £31m. That sounds like a lot until you realise every good available player is now about to be fought over by twelve managers simultaneously. Masterman has given themselves a mountain to climb by sleepwalking through Round 1 and must now sprint through Round 2 with the urgency of a man who has just noticed his train is already pulling out of the station.",
+    review: "<strong>Masterman</strong> has achieved the remarkable feat of spending £9m and ending up with only three players, which statistically means each player cost an average of £3m. That is the same as Cotton paid for Scholes, except Masterman got <strong>Ian Wright</strong> instead — who is 33, brilliant in bursts, and in FM has the durability of a Cadbury Flake in a sauna.<br><br>Reliable sources close to the Masterman household suggest the Round 1 bid sheet was completed in the dangerous window immediately before dinner. And dinner in this particular household is not a sandwich situation. Masterman has a Hungarian wife who cooks like a Michelin-starred Budapest restaurant, and when the smell of <em>paprikás csirke</em> is drifting through the house it is frankly unreasonable to expect anyone — large man or otherwise — to concentrate on midfielder valuations. The leves, the pörkölt, the rétes — it is simply not fair on the other managers. Hungary gave the world Ferenc Puskás. It also, apparently, gave the world a fantasy football bid sheet with thirteen empty slots.<br><br>Seaman at £2.8m is genuinely excellent value. Anderton is fine. The real problem is <strong>13 positions still to fill</strong> with £31m. Masterman must now attack Round 2 with the urgency of a large man who has just been told dinner is on the table.",
     good: 'Seaman is excellent value. Budget largely intact.',
-    bad: '13 positions to fill. THIRTEEN. Ian Wright is not going to cover that gap single-handed.'
+    bad: 'Bidding on an empty stomach is no way to run a fantasy football team. Hungary produced Puskás. This produced three players.'
   },
   {
     id: 'bareham',
