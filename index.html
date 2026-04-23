@@ -1177,8 +1177,8 @@
   <div class="header-inner">
     <div class="badge">⚽ Fantasy League</div>
     <h1>Always<span>Last Season</span></h1>
-    <p class="header-sub">Premier League 1995/96 · FM Simulation · 12 Managers</p>
-    <p class="header-creator">A game invented by <strong>David Broome</strong> · Administered by the Always Last Season Commissioner</p>
+    <p class="header-sub">the retro fantasy football game</p>
+    <p class="header-creator">A game invented by <strong>David Broome</strong></p>
   </div>
   <div class="pitch-deco"></div>
 </header>
@@ -1376,37 +1376,9 @@
       </div>
 
       <div class="holding-fixtures">
-        <div class="holding-fixtures-title">🗓 First Gameweek Preview — Matchday 1</div>
-        <div class="fixture-row">
-          <span class="fixture-team">Aston Villa</span>
-          <span class="fixture-vs">vs</span>
-          <span class="fixture-team">Man Utd</span>
-        </div>
-        <div class="fixture-row">
-          <span class="fixture-team">Blackburn</span>
-          <span class="fixture-vs">vs</span>
-          <span class="fixture-team">QPR</span>
-        </div>
-        <div class="fixture-row">
-          <span class="fixture-team">Chelsea</span>
-          <span class="fixture-vs">vs</span>
-          <span class="fixture-team">Everton</span>
-        </div>
-        <div class="fixture-row">
-          <span class="fixture-team">Leeds</span>
-          <span class="fixture-vs">vs</span>
-          <span class="fixture-team">West Ham</span>
-        </div>
-        <div class="fixture-row">
-          <span class="fixture-team">Liverpool</span>
-          <span class="fixture-vs">vs</span>
-          <span class="fixture-team">Sheff Wed</span>
-        </div>
-        <div class="fixture-row">
-          <span class="fixture-team">Newcastle</span>
-          <span class="fixture-vs">vs</span>
-          <span class="fixture-team">Coventry</span>
-        </div>
+        <div class="holding-fixtures-title">🗓 Fixtures</div>
+        <div style="padding: 20px 0; text-align:center; font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--green); letter-spacing:2px;">Coming Soon</div>
+        <div style="text-align:center; font-family:'Barlow Condensed',sans-serif; font-size:13px; color:var(--muted); padding-bottom:8px;">Fixture list will be updated once the season is confirmed</div>
       </div>
     </div>
 
@@ -1602,7 +1574,7 @@ const managers = [
   }
 ];
 
-const bidsR1 = [
+const bidsR1Unsorted = [
   {player:'Alan Shearer',club:'Blackburn',pos:'Striker',winner:'Smyth',price:'£15.0m'},
   {player:'Robbie Fowler',club:'Liverpool',pos:'Striker',winner:'Kerr',price:'£18.9m'},
   {player:'Les Ferdinand',club:'Newcastle',pos:'Striker',winner:'Kerr',price:'£14.2m'},
@@ -1677,11 +1649,13 @@ const bidsR1 = [
   {player:'Liam Daish',club:'Coventry',pos:'Defender',winner:'Davies',price:'£0.0m'},
   {player:'Stig Inge Bjørnbye',club:'Liverpool',pos:'Defender',winner:'Bareham',price:'£0.5m'}
 ];
+const bidsR1 = [...bidsR1Unsorted].sort((a,b) => parseFloat(b.price.replace('£','').replace('m','')) - parseFloat(a.price.replace('£','').replace('m','')));
 
 const posTag = p => {
-  if (p === 'Goalkeeper') return '<span class="pos-tag pos-GK">GK</span>';
-  if (p === 'Defender') return '<span class="pos-tag pos-DEF">DEF</span>';
-  if (p === 'Midfielder') return '<span class="pos-tag pos-MID">MID</span>';
+  if (p === 'Goalkeeper' || p === 'GK') return '<span class="pos-tag pos-GK">GK</span>';
+  if (p === 'Defender' || p === 'DF') return '<span class="pos-tag pos-DEF">DEF</span>';
+  if (p === 'Midfielder' || p === 'MF') return '<span class="pos-tag pos-MID">MID</span>';
+  if (p === 'Striker' || p === 'ST') return '<span class="pos-tag pos-ST">ST</span>';
   return '<span class="pos-tag pos-ST">ST</span>';
 };
 
@@ -1740,8 +1714,8 @@ function renderOverviewCards() {
     card.innerHTML = `
       <div class="card-header">
         <div>
-          <div class="card-manager">${m.manager}</div>
-          <div class="card-team">${m.fullname}</div>
+          <div class="card-manager">${m.fullname}</div>
+          <div class="card-team">${m.manager}</div>
         </div>
         <div class="card-rating">${ratingBadge(m.rating)}</div>
       </div>
@@ -1784,8 +1758,8 @@ function renderSquadCards(list) {
     card.innerHTML = `
       <div class="card-header">
         <div>
-          <div class="card-manager">${m.manager}</div>
-          <div class="card-team">${m.fullname}</div>
+          <div class="card-manager">${m.fullname}</div>
+          <div class="card-team">${m.manager}</div>
         </div>
         ${ratingBadge(m.rating)}
       </div>
@@ -2332,8 +2306,8 @@ function filterPool() {
 
 // ══ MODAL ══
 function openModal(m) {
-  document.getElementById('modal-name').textContent = m.manager;
-  document.getElementById('modal-team').textContent = m.fullname;
+  document.getElementById('modal-name').textContent = m.fullname;
+  document.getElementById('modal-team').textContent = m.manager;
   document.getElementById('modal-players').textContent = m.players;
   document.getElementById('modal-spent').textContent = `£${m.spent}m`;
   document.getElementById('modal-budget').textContent = `£${m.remaining}m`;
@@ -2496,8 +2470,8 @@ function renderReviews() {
     div.innerHTML = `
       <div class="review-header">
         <div class="review-manager-info">
-          <div class="review-manager">${r.manager}</div>
-          <div class="review-team">${r.fullname}</div>
+          <div class="review-manager">${r.fullname}</div>
+          <div class="review-team">${r.manager}</div>
         </div>
         <span class="verdict-badge ${verdictClasses[r.verdict]}">${r.verdictText}</span>
       </div>
