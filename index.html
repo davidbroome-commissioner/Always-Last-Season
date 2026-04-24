@@ -1209,12 +1209,12 @@
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Players Signed</div>
-        <div class="stat-card-value">121</div>
+        <div class="stat-card-value">122</div>
         <div class="stat-card-sub">Across Rounds 1 & 2</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Total Spent</div>
-        <div class="stat-card-value">£365m</div>
+        <div class="stat-card-value">£369m</div>
         <div class="stat-card-sub">Two rounds combined</div>
       </div>
       <div class="stat-card">
@@ -1621,9 +1621,9 @@ const managers = [
   },
   {
     id: 'davies', name: 'Davies', fullname: "Paul McGregor's Mullet", manager: 'Davies',
-    players: 8, spent: 21.0, remaining: 19.0, toFill: 8,
-    rating: 'B', ratingLabel: "Slow and Frustrated",
-    analysis: "Won 3 of 10 bids and finished level on the David James tiebreaker with Bareham. Added Ian Taylor for free, Keown for £3m, Bruce for £2m. 8 players (pending James outcome) and budget intact. The famous Round 1 attacking flair still has no strikers behind it.",
+    players: 9, spent: 25.3, remaining: 14.7, toFill: 7,
+    rating: 'B', ratingLabel: "James Tiebreaker Winner",
+    analysis: "Won 3 of 10 bids in Round 2, then won the David James tiebreaker against Bareham at £4.3m. Added Ian Taylor for free, Keown for £3m, Bruce for £2m, and now James as a proper first-choice keeper. 9 players, £14.7m left for 7 positions. Still desperately needs a striker beyond Ginola dropping deep.",
     squad: [
       {name:'David Ginola',pos:'MF',club:'Newcastle'},
       {name:'Stuart Pearce',pos:'DF',club:'Nottm Forest'},
@@ -1633,6 +1633,7 @@ const managers = [
       {name:'Ian Taylor',pos:'MF',club:'Aston Villa'},
       {name:'Martin Keown',pos:'DF',club:'Arsenal'},
       {name:'Steve Bruce',pos:'DF',club:'Man Utd'},
+      {name:'David James',pos:'GK',club:'Liverpool'},
     ]
   },
   {
@@ -1655,7 +1656,7 @@ const managers = [
     id: 'bareham', name: 'Bareham', fullname: "For Sure", manager: 'Bareham',
     players: 7, spent: 23.5, remaining: 16.5, toFill: 9,
     rating: 'A', ratingLabel: "A Warm, Special Round",
-    analysis: "A lovely, thoughtful Round 2. Won 4 of 12 bids including Savo Milošević and Rob Jones — both shrewd value picks that say more about the manager than the results let on. The David James tiebreaker is pending. 7 players and £16.5m left. Everyone loves a Bareham squad.",
+    analysis: "A lovely, thoughtful Round 2. Won 4 of 12 bids including Savo Milošević and Rob Jones — both shrewd value picks that say more about the manager than the results let on. The David James tiebreaker was narrowly lost to Davies. 7 players and £16.5m left. Everyone loves a Bareham squad.",
     squad: [
       {name:'Dwight Yorke',pos:'ST',club:'Aston Villa'},
       {name:'Gary Speed',pos:'MF',club:'Leeds'},
@@ -1774,6 +1775,7 @@ const bidsR2Unsorted = [
   {player:'Ian Taylor',club:'Aston Villa',pos:'Midfielder',winner:'Davies',price:'£0.0m'},
   {player:'Martin Keown',club:'Arsenal',pos:'Defender',winner:'Davies',price:'£3.0m'},
   {player:'Steve Bruce',club:'Man Utd',pos:'Defender',winner:'Davies',price:'£2.0m'},
+  {player:'David James',club:'Liverpool',pos:'Goalkeeper',winner:'Davies',price:'£4.3m'},
   {player:'Anders Limpar',club:'Everton',pos:'Midfielder',winner:'Hodgson',price:'£1.0m'},
   {player:'Andy Cole',club:'Man Utd',pos:'Striker',winner:'Hodgson',price:'£11.0m'},
   {player:'Chris Sutton',club:'Blackburn',pos:'Striker',winner:'Hodgson',price:'£11.0m'},
@@ -2538,14 +2540,14 @@ const reviews = [
   },
   {
     id: 'masterman', manager: 'Masterman', fullname: "Best Tomwich Albion",
-    verdict: 'solid', verdictText: "🍽️ Post-Dinner Renaissance",
-    comparison: "Harry Redknapp",
-    compReason: "A bit chaotic, a bit rushed, but somehow it all works out in the end with a last-minute transfer surge.",
+    verdict: 'solid', verdictText: "💣 The Bielsa Disciple",
+    comparison: "Marcelo Bielsa",
+    compReason: "Obsessive, unpredictable, and absolutely capable of producing a live grenade at a training session if he felt the lads were getting complacent.",
     flames: '🔥🔥🔥',
-    flameCaption: 'Belly full, mind clear, bids flowing.',
-    review: "<strong>Masterman</strong> is back. Whatever Hungarian feast derailed Round 1 has clearly been digested, and Round 2 was a thundering response. <strong>Hendry, Barnes, Ruddock, Howey, Draper, Hartson</strong> — six proper signings in one round. All sensible prices. All real positional upgrades. The squad now has 9 players and looks respectable.<br><br>The Colin Hendry at £4m and John Barnes at £3.4m are particularly good pieces of business. Hendry is a consistent 7+ rating defender, Barnes is a genuine playmaker who will rack up creative ratings every week. Steve Howey at £3.6m is solid. Mark Draper at £2.6m is value.<br><br>The two losses — Chris Sutton at £4.8m and Rob Lee at £5.2m — were painful but ultimately correct. Sutton went to Hodgson for a double-up, Lee went to Rowe for an unmatchable £9.1m. There is no shame in losing either.<br><br>£12.2m left for 7 positions is a workable runway. This is the Masterman we were expecting in Round 1.",
-    good: 'The pivot from sleepy Round 1 to aggressive Round 2 was genuine tactical recovery',
-    bad: 'Still one Hungarian dinner away from accidentally bidding £40m on a Bolton reserve goalkeeper'
+    flameCaption: 'Dangerous. In every sense.',
+    review: "<strong>Masterman</strong> is back, and he is back in a way only a true <strong>Bielsa disciple</strong> could be. Whatever Hungarian feast derailed Round 1 has clearly been digested, and Round 2 was a thundering response. <strong>Hendry, Barnes, Ruddock, Howey, Draper, Hartson</strong> — six proper signings in one round. All sensible prices. All real positional upgrades.<br><br>The Bielsa comparison is not just about football obsession. It is documented fact that El Loco once pulled the pin on a live grenade during a training session to see how his players would react under pressure — a story that anyone who has been on a lads' weekend with Masterman will recognise instantly as the spiritual ancestor of the stink bomb in the shared Airbnb, or the toilet blockage deployed with strategic timing on the morning of a wedding. <em>Same energy. Same commitment to keeping the group on its toes.</em><br><br>The Colin Hendry at £4m and John Barnes at £3.4m are particularly good pieces of business. Hendry is a consistent 7+ rating defender, Barnes is a genuine playmaker who will rack up creative ratings every week. Steve Howey at £3.6m is solid. Mark Draper at £2.6m is value. The two losses — Sutton and Rob Lee — were always unwinnable.<br><br>£12.2m left for 7 positions is a workable runway. This is the Masterman we were expecting in Round 1, and Bielsa would approve. The training ground, one assumes, remains heavily mined.",
+    good: 'Pivoted from sleepy Round 1 to ruthless Round 2 with the kind of obsessive intensity Bielsa would recognise',
+    bad: 'Still one Hungarian dinner away from accidentally bidding £40m on a Bolton reserve goalkeeper. Also, please do not check his bag before the next lads weekend.'
   },
   {
     id: 'hodgson', manager: 'Hodgson', fullname: "Not Sure",
@@ -2560,14 +2562,14 @@ const reviews = [
   },
   {
     id: 'meyers', manager: 'Meyers', fullname: "I'll Be Back Four",
-    verdict: 'solid', verdictText: "🌟 Quality Personified",
-    comparison: "Pep Guardiola",
-    compReason: "Fewer players than everyone else, but every single one is elite. Quality over quantity, always.",
-    flames: '🔥🔥🔥🔥',
-    flameCaption: 'Building something genuinely special.',
-    review: "A Round 2 to be properly proud of. <strong>Meyers</strong> walked in needing a striker and walked out with <strong>Stan Collymore for £12m</strong> — comfortably outbidding the competition and landing the biggest name still available. That is not a bid, that is a statement.<br><br>Paired with <strong>David Platt</strong> at £3m (an absolute steal for a player of that quality), <strong>Duncan Ferguson</strong> at £1.5m, and the wonderful <strong>Saša Ćurčić</strong> at £0.1m as a wildcard, the squad is taking genuine shape. Schmeichel behind a growing midfield of Kanchelskis, Juninho, Platt and Ćurčić, with Bergkamp and Collymore up top? That is the basis of a truly excellent team.<br><br>Eight players, £10.4m still in the bank, eight positions still to fill — a lot of flexibility, a lot of quality already locked in, and an unmistakable feeling that the other managers have started to take this squad very seriously indeed. The team name was a promise. The promise is being kept.",
-    good: 'Collymore at £12m was the biggest single bid of Round 2 and it was absolutely worth it',
-    bad: 'Still needs a full back four and a backup keeper. The Terminator reference is still slightly premature.'
+    verdict: 'decent', verdictText: "🎭 Ironic Masterpiece",
+    comparison: "A man who names his pub The Quiet Pint and then hosts karaoke every Friday",
+    compReason: "Promised a back four. Delivered a front four. Accidentally created the most self-deceptive squad in the league.",
+    flames: '🔥🔥',
+    flameCaption: 'The team name is now doing most of the comedy heavy lifting.',
+    review: "Let us talk about the team name. <strong>I'll Be Back Four.</strong> It is a fantastic pun. Clever. Self-aware. Promised that the back four was, in fact, coming. That <em>when the Terminator returned, he'd be a defensive unit.</em><br><br>And yet here we are. Two rounds in. And <strong>Meyers has signed precisely ZERO defenders.</strong> Not one. Not a single centre-back, right-back, left-back, or even a midfielder who could be coerced into defending under duress. The squad consists of a goalkeeper, four midfielders, and three strikers. If the fantasy league required Meyers to field a team tomorrow, the back four would be literally empty space. Just grass. Tactical grass.<br><br>The team name is no longer a pun. It is a cry for help. It is an ongoing promise that the manager is clearly unable to keep. Every time Meyers looks at the squad list, the team name stares back, mocking. <em>I'll Be Back Four</em>. No you won't, mate. You've spent £29.6m of your £40m budget and not a single pound of it has gone on a defender. The Terminator isn't coming back. The Terminator has ghosted you.<br><br>Round 2 was, to be fair, objectively productive. <strong>Stan Collymore for £12m</strong> is a real signing. <strong>David Platt at £3m</strong> is a steal. <strong>Duncan Ferguson</strong> adds striker depth. <strong>Saša Ćurčić</strong> at £0.1m is a nice wildcard. But <em>look at that list</em>. Another striker. Another midfielder. Another striker. Another midfielder. There is a pattern here and the pattern is not defensive reinforcement.<br><br>Eight players, £10.4m remaining, eight positions left. Meyers now needs to sign an <em>entire back four plus backup keeper plus a rotation option</em> with £10.4m. That is £1.5m average per defender. The name that once sounded like a confident statement of intent now sounds like something muttered sadly into a drink at 11pm.",
+    good: 'Collymore at £12m was a genuinely elite signing. Bergkamp and Schmeichel remain the class of the draft. The front half of the team is magnificent.',
+    bad: 'Has signed zero defenders across two full rounds despite the team name literally being a promise to sign defenders. Four midfielders. Three strikers. No defence. An ironic masterpiece.'
   },
   {
     id: 'roach', manager: 'Roach', fullname: "Eze Ya Later",
@@ -2598,7 +2600,7 @@ const reviews = [
     compReason: "Looks solid on paper, has definite flair moments, but there are questions about the overall project.",
     flames: '🔥🔥',
     flameCaption: 'Still waiting for it all to click.',
-    review: "<strong>Davies</strong> won three of ten bids in Round 2, which is a frustrating success rate. <strong>Martin Keown</strong> at £3m, <strong>Steve Bruce</strong> at £2m, and <strong>Ian Taylor for free</strong> are all sensible additions, but the round was also marked by losing seven bids including Andy Cole, Chris Sutton, and John Barnes.<br><br>The <strong>David James tiebreaker with Bareham is still pending</strong>, which means the 8/9 player count and £16.5m/£19m budget remains in flux. That is an annoying place to be as the draft heads into Round 3.<br><br>The mullet is still mostly party at the back — Bruce, Keown, Pearce, Daish is now a proper back four. But the front end has no striker beyond Ginola dropping into a false nine role, and Davies needs to fix that urgently in Round 3. With £19m still in the bank (pending James), there is plenty of firepower left.",
+    review: "<strong>Davies</strong> won three of ten Round 2 bids outright, then won the all-important David James tiebreaker against Bareham at £4.3m to secure a proper first-choice goalkeeper. <strong>Martin Keown</strong> at £3m, <strong>Steve Bruce</strong> at £2m, and <strong>Ian Taylor for free</strong> are all sensible additions. Losing seven other bids (Cole, Sutton, Barnes among them) was painful but unavoidable.<br><br>The <strong>James win changes the squad shape significantly</strong>. Having a proper keeper takes one critical position off the to-do list and frees Davies up to spend Round 3 exclusively on attackers. The mullet is now business at the back — James, Bruce, Keown, Pearce, Daish — with the party flair of Ginola and Bryan Roy in midfield.<br><br>£14.7m left for 7 positions is still a healthy runway. The front end needs serious attention — Davies has no recognised striker and that has to be the Round 3 priority. Get a Collymore-tier striker and this squad suddenly looks dangerous.",
     good: 'Keown and Bruce together is a proper veteran centre-back pairing that will rate consistently well',
     bad: 'Still has no recognised striker. Ginola up front is charming but not sustainable.'
   },
@@ -2620,7 +2622,7 @@ const reviews = [
     compReason: "Warm-hearted, universally loved, makes shrewd picks that everyone respects. A proper football man.",
     flames: '🔥🔥🔥🔥',
     flameCaption: 'Bareham is just lovely, isn\'t he?',
-    review: "A genuinely pleasing Round 2 from <strong>Bareham</strong>. You can feel the warmth radiating off this squad. <strong>Savo Milošević at £4m</strong> is the kind of characterful striker pick that only someone with genuine football feeling would make. <strong>Rob Jones at £1.5m</strong> is a proper, proper full-back. <strong>Andy Sinton at £1m</strong> and <strong>Peter Beagrie at £0.1m</strong> are lovely little additions that round out the squad with honest, hard-working players.<br><br>The <strong>David James tiebreaker is pending</strong>, which keeps 9 slots in play and the final budget slightly fluid. But the overall sense is of a squad built with care, intention, and a clear love of the game.<br><br>Round 1 was a painful near-miss experience — eight times second-highest bidder. Round 2 has completely reset the narrative. Four wins out of twelve, smart prices throughout, and a squad that is genuinely starting to look like one that would finish top half. Bareham is one of those managers that the rest of the league is quietly rooting for. A proper football man. We all love it.",
+    review: "A genuinely pleasing Round 2 from <strong>Bareham</strong>. You can feel the warmth radiating off this squad. <strong>Savo Milošević at £4m</strong> is the kind of characterful striker pick that only someone with genuine football feeling would make. <strong>Rob Jones at £1.5m</strong> is a proper, proper full-back. <strong>Andy Sinton at £1m</strong> and <strong>Peter Beagrie at £0.1m</strong> are lovely little additions that round out the squad with honest, hard-working players.<br><br>The <strong>David James tiebreaker was narrowly lost to Davies at £4.3m</strong>, which stings but only slightly — it leaves Bareham with £16.5m intact for 9 positions and all the tactical options still in play. Sometimes not winning a bid is the best thing that can happen.<br><br>Round 1 was a painful near-miss experience — eight times second-highest bidder. Round 2 has completely reset the narrative. Four wins out of twelve, smart prices throughout, and a squad that is genuinely starting to look like one that would finish top half. Bareham is one of those managers that the rest of the league is quietly rooting for. A proper football man. We all love it.",
     good: 'Milošević at £4m is the kind of pick made with genuine football knowledge, not auction panic',
     bad: 'The James tiebreaker resolution could still swing both directions — a rare moment of uncertainty for the rest of an otherwise rock-solid plan'
   },
