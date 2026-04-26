@@ -1488,24 +1488,20 @@
       </div>
       <button class="modal-close" onclick="closeModalDirect()">×</button>
     </div>
-    <div class="modal-body">
+<div class="modal-body">
       <div class="modal-stats">
-        <div class="modal-stat">
-          <label>Players Won</label>
-          <value id="modal-players"></value>
-        </div>
-        <div class="modal-stat">
-          <label>Total Spent</label>
-          <value id="modal-spent"></value>
-        </div>
-        <div class="modal-stat">
-          <label>Budget Left</label>
-          <value id="modal-budget"></value>
-        </div>
+        <div class="modal-stat"><label>Players</label><value id="modal-players"></value></div>
+        <div class="modal-stat"><label>Spent</label><value id="modal-spent"></value></div>
+        <div class="modal-stat"><label>Budget</label><value id="modal-budget"></value></div>
       </div>
-      <div class="modal-players-title">Signed Players</div>
-      <div class="players-list" id="modal-squad"></div>
-      <div class="modal-analysis" id="modal-analysis"></div>
+      <div class="section-desc" id="lineup-instruction" style="margin-bottom:10px;">Select 11 players for your Starting XI:</div>
+      <div id="modal-squad"></div>
+      
+      <div class="lineup-controls">
+        <button id="lock-btn" class="btn-lineup" onclick="toggleLock()"></button>
+        <a id="send-btn" class="btn-lineup btn-send" style="display:none;">📧 Send Lineup to ALS Admin</a>
+      </div>
+      <div class="modal-analysis" id="modal-analysis" style="margin-top:20px;"></div>
     </div>
   </div>
 </div>
