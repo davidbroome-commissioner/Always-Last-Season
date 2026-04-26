@@ -80,68 +80,149 @@
   }
 
   h1 span { color: var(--green); display: block; }
-  .header-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; letter-spacing: 4px; color: var(--muted); margin-top: 12px; text-transform: uppercase; }
 
-  .tabs { background: var(--navy2); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
-  .tabs-inner { max-width: 1200px; margin: 0 auto; display: flex; overflow-x: auto; scrollbar-width: none; padding: 0 24px; }
-  .tab { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); padding: 16px 20px; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s; white-space: nowrap; background: none; border: none; }
+  .header-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    margin-top: 12px;
+    text-transform: uppercase;
+  }
+
+  .pitch-deco {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(0,200,83,0.15);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+
+  .tabs {
+    background: var(--navy2);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+  }
+
+  .tabs-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0 24px;
+  }
+
+  .tab {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 16px 20px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+    background: none;
+    border: none;
+  }
+
   .tab:hover { color: var(--text); }
   .tab.active { color: var(--green); border-bottom-color: var(--green); }
 
   main { max-width: 1200px; margin: 0 auto; padding: 40px 24px; position: relative; z-index: 1; }
   .section { display: none; }
   .section.active { display: block; animation: fadeIn 0.3s ease; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
   .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 36px; letter-spacing: 2px; margin-bottom: 8px; color: #fff; }
-  .section-desc { color: var(--muted); font-size: 14px; margin-bottom: 32px; font-family: 'Barlow Condensed', sans-serif; }
+  .section-desc { color: var(--muted); font-size: 14px; margin-bottom: 32px; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 1px; }
 
   .standings-table { width: 100%; border-collapse: collapse; font-family: 'Barlow Condensed', sans-serif; }
   .standings-table th { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
   .standings-table td { padding: 14px 12px; border-bottom: 1px solid var(--border); font-size: 15px; }
+
   .pos-num { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--muted); width: 40px; }
   .pos-1 .pos-num { color: var(--gold); }
 
-  .budget-bar-wrap { display: flex; align-items: center; gap: 10px; }
-  .budget-bar { flex: 1; height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
-  .budget-fill { height: 100%; background: linear-gradient(90deg, var(--green), var(--amber)); }
-  .budget-val { font-size: 13px; color: var(--green); font-weight: 700; width: 45px; text-align: right; }
+  .manager-name { font-weight: 700; color: #fff; }
+  .team-name { font-size: 12px; color: var(--muted); }
 
-  .rating-badge { display: inline-block; padding: 3px 10px; border-radius: 3px; font-size: 12px; font-weight: 700; }
-  .rating-s { background: rgba(0,200,83,0.2); color: var(--green); }
+  .budget-bar-wrap { display: flex; align-items: center; gap: 10px; }
+  .budget-bar { flex: 1; height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; min-width: 60px; }
+  .budget-fill { height: 100%; background: linear-gradient(90deg, var(--green), var(--amber)); transition: width 1s ease; }
+  .budget-val { font-size: 13px; color: var(--green); font-weight: 700; min-width: 42px; text-align: right; }
+
+  .rating-badge { display: inline-block; padding: 3px 10px; border-radius: 3px; font-size: 12px; font-weight: 700; letter-spacing: 1px; }
+  .rating-s { background: rgba(0,200,83,0.2); color: var(--green); border: 1px solid rgba(0,200,83,0.3); }
   .rating-a { background: rgba(100,180,255,0.15); color: #64b4ff; }
   .rating-b { background: rgba(255,171,0,0.15); color: var(--amber); }
+  .rating-c { background: rgba(213,0,0,0.15); color: #ff5252; }
 
   .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
-  .manager-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; }
-  .card-header { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .manager-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: transform 0.2s; cursor: pointer; }
+  .manager-card:hover { transform: translateY(-2px); border-color: rgba(0,200,83,0.3); }
+
+  .card-header { padding: 16px 20px; background: linear-gradient(135deg, rgba(0,200,83,0.08), rgba(0,200,83,0.02)); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; }
   .card-manager { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: #fff; }
   .card-body { padding: 16px 20px; }
-  .card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 10px; }
-  .stat-item label { display: block; font-size: 10px; text-transform: uppercase; color: var(--muted); }
+  .card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  .stat-item label { display: block; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; font-family: 'Barlow Condensed', sans-serif; }
   .stat-item value { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: #fff; }
 
-  .player-chip { display: inline-block; font-size: 11px; font-family: 'Barlow Condensed', sans-serif; padding: 4px 8px; border-radius: 3px; border: 1px solid var(--border); background: rgba(255,255,255,0.04); margin: 2px; }
-  .chip-pos { font-size: 9px; color: var(--muted); margin-right: 4px; font-weight: bold; }
+  .players-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .player-chip { font-size: 11px; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; padding: 4px 8px; border-radius: 3px; border: 1px solid var(--border); color: var(--text); background: rgba(255,255,255,0.04); }
+  .chip-pos { font-size: 9px; color: var(--muted); margin-right: 3px; }
 
-  .bids-table { width: 100%; border-collapse: collapse; font-family: 'Barlow Condensed', sans-serif; margin-bottom: 30px; }
-  .bids-table th { font-size: 10px; color: var(--muted); text-align: left; padding: 10px; border-bottom: 1px solid var(--border); }
-  .bids-table td { padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.04); }
-  .won-tag { background: rgba(0,200,83,0.15); color: var(--green); padding: 2px 6px; border-radius: 2px; font-size: 10px; font-weight: bold; }
+  .bids-table { width: 100%; border-collapse: collapse; font-family: 'Barlow Condensed', sans-serif; }
+  .bids-table th { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); font-weight: 600; }
+  .bids-table td { padding: 11px 14px; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 14px; }
+  .won-row td { background: rgba(0,200,83,0.04); }
+  .bid-price { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--green); }
+  .won-tag { display: inline-block; background: rgba(0,200,83,0.15); color: var(--green); border: 1px solid rgba(0,200,83,0.3); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; padding: 2px 7px; border-radius: 2px; }
 
-  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 20px; }
+  .pos-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; }
+  .pos-GK { background: rgba(100,180,255,0.15); color: #64b4ff; }
+  .pos-DEF { background: rgba(0,200,83,0.12); color: var(--green); }
+  .pos-MID { background: rgba(255,171,0,0.12); color: var(--amber); }
+  .pos-ST { background: rgba(213,0,0,0.15); color: #ff5252; }
+
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 24px; }
   .modal-overlay.open { display: flex; }
-  .modal { background: var(--navy2); border: 1px solid var(--green); border-radius: 12px; width: 100%; max-width: 600px; max-height: 90vh; overflow-y: auto; padding: 24px; }
-  .modal-header { display: flex; justify-content: space-between; margin-bottom: 20px; }
-  .modal-close { background: none; border: none; color: var(--muted); font-size: 24px; cursor: pointer; }
+  .modal { background: var(--navy2); border: 1px solid rgba(0,200,83,0.2); border-radius: 12px; width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto; }
+  .modal-header { padding: 24px 24px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; }
+  .modal-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: #fff; line-height: 1; }
+  .modal-close { background: none; border: none; color: var(--muted); font-size: 24px; cursor: pointer; padding: 0 4px; line-height: 1; }
+  .modal-body { padding: 20px 24px 24px; }
+  .modal-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+  .modal-stat { background: rgba(255,255,255,0.04); border-radius: 6px; padding: 12px; text-align: center; }
+  .modal-stat label { display: block; font-size: 10px; color: var(--muted); margin-bottom: 4px; }
+  .modal-stat value { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: #fff; }
+  .modal-analysis { margin-top: 16px; padding: 14px; background: rgba(0,200,83,0.05); border: 1px solid rgba(0,200,83,0.15); border-radius: 6px; font-size: 13px; color: var(--text); line-height: 1.6; }
 
-  .review-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 20px; overflow: hidden; }
-  .review-header { padding: 15px 20px; background: rgba(255,255,255,0.03); display: flex; justify-content: space-between; }
-  .review-manager { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #fff; }
-  .review-body { padding: 20px; }
-  .review-text { font-size: 14px; line-height: 1.6; margin-bottom: 15px; }
-  .quote-box { background: rgba(0,200,83,0.05); padding: 12px; border-left: 3px solid var(--green); border-radius: 4px; margin-top: 10px; }
-  .squad-pos-group { margin-bottom: 10px; display: flex; flex-wrap: wrap; gap: 5px; width: 100%; }
+  .review-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 24px; }
+  .review-header { display: flex; justify-content: space-between; padding: 20px 24px 16px; background: linear-gradient(135deg, rgba(255,50,50,0.06), rgba(255,50,50,0.02)); border-bottom: 1px solid var(--border); }
+  .review-manager { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #fff; line-height: 1; }
+  .review-body { padding: 20px 24px; }
+  .review-text { font-size: 14px; line-height: 1.75; color: var(--text); margin-bottom: 16px; }
+  .quote-box { background: rgba(255,255,255,0.03); border-radius: 6px; padding: 12px 14px; border-left: 2px solid var(--green); margin-bottom: 12px; }
+  .quote-label { font-size: 10px; color: var(--green); text-transform: uppercase; margin-bottom: 4px; }
+
+  .squad-pos-group { margin-bottom: 12px; display: flex; flex-wrap: wrap; gap: 6px; width: 100%; }
+  footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; color: var(--muted); font-size: 12px; }
 </style>
 </head>
 <body>
@@ -150,26 +231,31 @@
   <div class="header-inner">
     <div class="badge">⚽ Fantasy League</div>
     <h1>Always<span>Last Season</span></h1>
-    <p class="header-sub">Round 3 Auction Results Complete</p>
+    <p class="header-sub">Retro Fantasy Football — Round 3 Complete</p>
   </div>
+  <div class="pitch-deco"></div>
 </header>
 
 <nav class="tabs">
   <div class="tabs-inner">
-    <button class="tab active" onclick="showTab('overview')">Overview</button>
-    <button class="tab" onclick="showTab('standings')">Standings</button>
-    <button class="tab" onclick="showTab('squads')">Squads</button>
-    <button class="tab" onclick="showTab('bids')">Bid Results</button>
-    <button class="tab" onclick="showTab('reviews')">Squad Reviews</button>
+    <button class="tab active" onclick="showTab('overview', event)">Overview</button>
+    <button class="tab" onclick="showTab('standings', event)">Standings</button>
+    <button class="tab" onclick="showTab('squads', event)">Squads</button>
+    <button class="tab" onclick="showTab('bids', event)">Bid Results</button>
+    <button class="tab" onclick="showTab('reviews', event)">Squad Reviews</button>
+    <button class="tab" onclick="showTab('reports', event)">Match Reports</button>
   </div>
 </nav>
 
 <main>
   <section id="overview" class="section active">
     <div class="section-title">League Overview</div>
+    <div class="section-desc">Round 3 Auction Complete · Season Kick-Off Pending</div>
     <div class="stats-row">
       <div class="stat-card"><div class="stat-card-value">162</div><div class="section-desc">Players Signed</div></div>
       <div class="stat-card"><div class="stat-card-value">£512.4m</div><div class="section-desc">Total Spent</div></div>
+      <div class="stat-card"><div class="stat-card-value">12</div><div class="section-desc">Managers</div></div>
+      <div class="stat-card"><div class="stat-card-value">DONE</div><div class="section-desc">Draft Status</div></div>
     </div>
     <div class="cards-grid" id="overview-cards"></div>
   </section>
@@ -177,32 +263,63 @@
   <section id="standings" class="section">
     <div class="section-title">Manager Standings</div>
     <table class="standings-table">
-      <thead><tr><th>Pos</th><th>Manager</th><th>Players</th><th>Spent</th><th>Remaining</th><th>Rating</th></tr></thead>
+      <thead>
+        <tr><th>#</th><th>Manager</th><th>Players</th><th>Spent</th><th>Remaining</th><th>Rating</th></tr>
+      </thead>
       <tbody id="standings-body"></tbody>
     </table>
   </section>
 
   <section id="squads" class="section">
-    <div class="search-bar"><input class="search-input" type="text" placeholder="Search squads..." id="squad-search" oninput="filterSquads()"></div>
+    <div class="section-title">Squad Viewer</div>
+    <div class="search-bar">
+      <input class="search-input" type="text" placeholder="Search squads..." id="squad-search" oninput="filterSquads()">
+    </div>
     <div class="cards-grid" id="squads-grid"></div>
   </section>
 
   <section id="bids" class="section">
-    <div class="section-title">Auction History</div>
-    <div class="round-section"><h3>Round 3 Results</h3><table class="bids-table"><thead><tr><th>Player</th><th>Winner</th><th>Price</th><th></th></tr></thead><tbody id="bids-body-r3"></tbody></table></div>
-    <div class="round-section"><h3>Round 2 Results</h3><table class="bids-table"><thead><tr><th>Player</th><th>Winner</th><th>Price</th><th></th></tr></thead><tbody id="bids-body-r2"></tbody></table></div>
-    <div class="round-section"><h3>Round 1 Results</h3><table class="bids-table"><thead><tr><th>Player</th><th>Winner</th><th>Price</th><th></th></tr></thead><tbody id="bids-body-r1"></tbody></table></div>
+    <div class="section-title">Full Auction History</div>
+    <div class="round-section">
+      <div class="round-header"><span class="round-pill">Round 3</span><span class="round-title">Final Results</span></div>
+      <table class="bids-table">
+        <thead><tr><th>Player</th><th>Club</th><th>Pos</th><th>Winner</th><th>Price</th><th></th></tr></thead>
+        <tbody id="bids-body-r3"></tbody>
+      </table>
+    </div>
+    <div class="round-section">
+      <div class="round-header" style="opacity:0.6"><span class="round-pill">Round 2</span><span class="round-title">Results</span></div>
+      <table class="bids-table" style="opacity:0.7">
+        <tbody id="bids-body-r2"></tbody>
+      </table>
+    </div>
+    <div class="round-section">
+      <div class="round-header" style="opacity:0.4"><span class="round-pill">Round 1</span><span class="round-title">Results</span></div>
+      <table class="bids-table" style="opacity:0.5">
+        <tbody id="bids-body-r1"></tbody>
+      </table>
+    </div>
   </section>
 
   <section id="reviews" class="section">
     <div class="section-title">Squad Reviews</div>
     <div id="reviews-container"></div>
   </section>
+
+  <section id="reports" class="section">
+    <div class="holding-screen">
+      <div class="holding-title">Season Not Started</div>
+      <div class="section-desc">Gameweek 1 Fixtures Pending Kick-Off</div>
+    </div>
+  </section>
 </main>
 
 <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
   <div class="modal">
-    <div class="modal-header"><div class="modal-title" id="modal-name"></div><button class="modal-close" onclick="closeModalDirect()">×</button></div>
+    <div class="modal-header">
+      <div class="modal-title" id="modal-name"></div>
+      <button class="modal-close" onclick="closeModalDirect()">×</button>
+    </div>
     <div class="modal-body">
       <div class="modal-stats">
         <div class="modal-stat"><label>Players</label><value id="modal-players"></value></div>
@@ -210,10 +327,14 @@
         <div class="modal-stat"><label>Budget</label><value id="modal-budget"></value></div>
       </div>
       <div id="modal-squad"></div>
-      <div class="modal-analysis" id="modal-analysis" style="margin-top:20px; font-style:italic; color:var(--muted)"></div>
+      <div class="modal-analysis" id="modal-analysis"></div>
     </div>
   </div>
 </div>
+
+<footer>
+  Always Last Season Fantasy League · Premier League 1995/96
+</footer>
 
 <script>
 const managers = [
@@ -221,115 +342,196 @@ const managers = [
     id: 'rowe', name: 'Rowe', fullname: "Autoglass Trophy 1992", players: 14, spent: 39.4, remaining: 0.6, rating: 'S',
     analysis: "Rowe did absolutely nothing in Round 3. Why? Because when you have Giggs, Gullit, Le Tissier, Yeboah, and Rob Lee, what else do you really need? He spent the round watching the other managers scramble for Alan Kimble while he polished his trophy cabinet.",
     squad: [
-      {name:'Matt Le Tissier',pos:'ST'}, {name:'Ryan Giggs',pos:'MF'}, {name:'Ruud Gullit',pos:'MF'}, {name:'Tony Yeboah',pos:'ST'}, {name:'Robbie Earle',pos:'MF'}, {name:'Julian Dicks',pos:'DF'}, {name:'Lucas Radebe',pos:'DF'}, {name:'Alan Wright',pos:'DF'}, {name:'Dominic Matteo',pos:'MF'}, {name:'Gordon Strachan',pos:'MF'}, {name:'Henning Berg',pos:'DF'}, {name:'John Lukic',pos:'GK'}, {name:'Mark Stein',pos:'ST'}, {name:'Rob Lee',pos:'MF'}
+      {name:'Matt Le Tissier',pos:'ST'}, {name:'Tony Yeboah',pos:'ST'}, {name:'Mark Stein',pos:'ST'},
+      {name:'Ryan Giggs',pos:'MF'}, {name:'Ruud Gullit',pos:'MF'}, {name:'Robbie Earle',pos:'MF'}, {name:'Dominic Matteo',pos:'MF'}, {name:'Gordon Strachan',pos:'MF'}, {name:'Rob Lee',pos:'MF'},
+      {name:'Julian Dicks',pos:'DF'}, {name:'Lucas Radebe',pos:'DF'}, {name:'Alan Wright',pos:'DF'}, {name:'Henning Berg',pos:'DF'},
+      {name:'John Lukic',pos:'GK'}
     ]
   },
   {
     id: 'masterman', name: 'Masterman', fullname: "Best Tomwich Albion", players: 16, spent: 38.0, remaining: 2.0, rating: 'S',
-    analysis: "Winning Colin Cooper, David Wetherall, and Steve Chettle in one swoop is a statement: 'You shall not pass, and if you do, you'll probably get a bruised shin.' With 16 players signed, the roster is full and the budget is effectively gone.",
+    analysis: "Winning Colin Cooper, David Wetherall, and Steve Chettle in one swoop is a statement: 'You shall not pass, and if you do, you'll probably get a bruised shin.' The wall is complete. If Ian Wright stays fit, this team is a genuine contender.",
     squad: [
-      {name:'David Seaman',pos:'GK'}, {name:'Darren Anderton',pos:'MF'}, {name:'Ian Wright',pos:'ST'}, {name:'Colin Hendry',pos:'DF'}, {name:'John Barnes',pos:'MF'}, {name:'John Hartson',pos:'ST'}, {name:'Mark Draper',pos:'MF'}, {name:'Neil Ruddock',pos:'DF'}, {name:'Steve Howey',pos:'DF'}, {name:'Andy Impey',pos:'MF'}, {name:'Carlton Palmer',pos:'MF'}, {name:'Colin Cooper',pos:'DF'}, {name:'David Wetherall',pos:'DF'}, {name:'Stan Lazaridis',pos:'MF'}, {name:'Steve Chettle',pos:'DF'}, {name:'Steve Chettle',pos:'DF'}
+      {name:'Ian Wright',pos:'ST'}, {name:'John Hartson',pos:'ST'},
+      {name:'Darren Anderton',pos:'MF'}, {name:'John Barnes',pos:'MF'}, {name:'Mark Draper',pos:'MF'}, {name:'Andy Impey',pos:'MF'}, {name:'Carlton Palmer',pos:'MF'}, {name:'Stan Lazaridis',pos:'MF'},
+      {name:'Colin Hendry',pos:'DF'}, {name:'Neil Ruddock',pos:'DF'}, {name:'Steve Howey',pos:'DF'}, {name:'Colin Cooper',pos:'DF'}, {name:'David Wetherall',pos:'DF'}, {name:'Steve Chettle',pos:'DF'},
+      {name:'David Seaman',pos:'GK'}
     ]
   },
   {
     id: 'cotton', name: 'Cotton', fullname: "Real SoSoBad", players: 15, spent: 39.9, remaining: 0.1, rating: 'A',
-    analysis: "Securing Pavel Srníček for £2.4m is a massive upgrade in goal, finally giving that Man Utd-heavy defense a reliable pair of hands. Adding Niall Quinn for £0.7m is the ultimate tactical insurance policy.",
+    analysis: "Securing Pavel Srníček for £2.4m is a massive upgrade in goal. Adding Niall Quinn for £0.7m is the ultimate tactical insurance policy—when Cantona and Sheringham aren't enough, bring on the big man.",
     squad: [
-      {name:'Roy Keane',pos:'MF'}, {name:'Denis Irwin',pos:'DF'}, {name:'Paul Scholes',pos:'MF'}, {name:'Gary Neville',pos:'DF'}, {name:'Eric Cantona',pos:'ST'}, {name:'Tony Adams',pos:'DF'}, {name:'Ugo Ehiogu',pos:'DF'}, {name:'Teddy Sheringham',pos:'ST'}, {name:'Gary McAllister',pos:'MF'}, {name:'Nicky Butt',pos:'MF'}, {name:'Keith Gillespie',pos:'MF'}, {name:'Darren Huckerby',pos:'ST'}, {name:'Gary Kelly',pos:'DF'}, {name:'Niall Quinn',pos:'ST'}, {name:'Pavel Srníček',pos:'GK'}
+      {name:'Eric Cantona',pos:'ST'}, {name:'Teddy Sheringham',pos:'ST'}, {name:'Darren Huckerby',pos:'ST'}, {name:'Niall Quinn',pos:'ST'},
+      {name:'Roy Keane',pos:'MF'}, {name:'Paul Scholes',pos:'MF'}, {name:'Gary McAllister',pos:'MF'}, {name:'Nicky Butt',pos:'MF'}, {name:'Keith Gillespie',pos:'MF'},
+      {name:'Denis Irwin',pos:'DF'}, {name:'Gary Neville',pos:'DF'}, {name:'Tony Adams',pos:'DF'}, {name:'Ugo Ehiogu',pos:'DF'}, {name:'Gary Kelly',pos:'DF'},
+      {name:'Pavel Srníček',pos:'GK'}
     ]
   },
   {
     id: 'davies', name: 'Davies', fullname: "Paul McGregor's Mullet", players: 16, spent: 39.7, remaining: 0.3, rating: 'A',
-    analysis: "Davies went into Round 3 with a lot of money and zero strikers. He left with Kevin Campbell, Efan Ekoku, and John Spencer. That is what we call a corrective spree.",
+    analysis: "Spent £14.4m in one round to fix a striker crisis. Kevin Campbell, Efan Ekoku, and John Spencer provide actual finish for Ginola's flair. It’s either going to finish 1st or 12th; there is no middle ground.",
     squad: [
-      {name:'David Ginola',pos:'MF'}, {name:'Stuart Pearce',pos:'DF'}, {name:'Bryan Roy',pos:'MF'}, {name:'Jason Wilcox',pos:'MF'}, {name:'Liam Daish',pos:'DF'}, {name:'Ian Taylor',pos:'MF'}, {name:'Martin Keown',pos:'DF'}, {name:'Steve Bruce',pos:'DF'}, {name:'David James',pos:'GK'}, {name:'Dimitri Kharine',pos:'GK'}, {name:'Efan Ekoku',pos:'ST'}, {name:'Jeff Kenna',pos:'DF'}, {name:'John Moncur',pos:'MF'}, {name:'John Spencer',pos:'ST'}, {name:'Kevin Campbell',pos:'ST'}, {name:'Lars Bohinen',pos:'MF'}
+      {name:'Efan Ekoku',pos:'ST'}, {name:'John Spencer',pos:'ST'}, {name:'Kevin Campbell',pos:'ST'},
+      {name:'David Ginola',pos:'MF'}, {name:'Bryan Roy',pos:'MF'}, {name:'Jason Wilcox',pos:'MF'}, {name:'Ian Taylor',pos:'MF'}, {name:'John Moncur',pos:'MF'}, {name:'Lars Bohinen',pos:'MF'},
+      {name:'Stuart Pearce',pos:'DF'}, {name:'Liam Daish',pos:'DF'}, {name:'Martin Keown',pos:'DF'}, {name:'Steve Bruce',pos:'DF'}, {name:'Jeff Kenna',pos:'DF'},
+      {name:'David James',pos:'GK'}, {name:'Dimitri Kharine',pos:'GK'}
     ]
   },
   {
     id: 'meyers', name: 'Meyers', fullname: "I'll Be Back Four", players: 14, spent: 37.3, remaining: 2.7, rating: 'A',
-    analysis: "Hallelujah. Meyers has actually signed some defenders. Des Walker, Slaven Bilic, and Darren Peacock have arrived to ensure Schmeichel isn't just facing a firing squad.",
+    analysis: "Hallelujah. Meyers has actually signed some defenders. Des Walker and Slaven Bilic ensure Schmeichel isn't a one-man army. Having Southall as a backup keeper is the ultimate flex.",
     squad: [
-      {name:'Peter Schmeichel',pos:'GK'}, {name:'Dennis Bergkamp',pos:'ST'}, {name:'Andrei Kanchelskis',pos:'MF'}, {name:'Juninho Paulista',pos:'MF'}, {name:'David Platt',pos:'MF'}, {name:'Duncan Ferguson',pos:'ST'}, {name:'Saša Ćurčić',pos:'MF'}, {name:'Stan Collymore',pos:'ST'}, {name:'Alf-Inge Håland',pos:'MF'}, {name:'Darren Peacock',pos:'DF'}, {name:'Des Walker',pos:'DF'}, {name:'Ian Rush',pos:'ST'}, {name:'Neville Southall',pos:'GK'}, {name:'Slaven Bilić',pos:'DF'}
+      {name:'Dennis Bergkamp',pos:'ST'}, {name:'Duncan Ferguson',pos:'ST'}, {name:'Ian Rush',pos:'ST'},
+      {name:'Andrei Kanchelskis',pos:'MF'}, {name:'Juninho Paulista',pos:'MF'}, {name:'David Platt',pos:'MF'}, {name:'Sasa Curcic',pos:'MF'}, {name:'Alf-Inge Haaland',pos:'MF'},
+      {name:'Darren Peacock',pos:'DF'}, {name:'Des Walker',pos:'DF'}, {name:'Slaven Bilic',pos:'DF'},
+      {name:'Peter Schmeichel',pos:'GK'}, {name:'Neville Southall',pos:'GK'}
     ]
   },
   {
     id: 'roach', name: 'Roach', fullname: "Eze Ya Later", players: 12, spent: 38.9, remaining: 1.1, rating: 'A',
-    analysis: "Roach didn't buy many players, but he bought David Hirst for £4.1m. Pair him with Faustino Asprilla and you have the most 90s vibes strike force in history.",
+    analysis: "Roach bought David Hirst for £4.1m. Pair him with Faustino Asprilla and you have the most '90s vibes strike force imaginable. 12 players is thin, but the quality is undeniable.",
     squad: [
-      {name:'Faustino Asprilla',pos:'ST'}, {name:'Giorgi Kinkladze',pos:'MF'}, {name:'Gary Pallister',pos:'DF'}, {name:'Graeme Le Saux',pos:'DF'}, {name:'Andy Hinchcliffe',pos:'DF'}, {name:'Nigel Winterburn',pos:'DF'}, {name:'David Batty',pos:'MF'}, {name:'Tim Sherwood',pos:'MF'}, {name:'Nolberto Solano',pos:'MF'}, {name:'Mark Bosnich',pos:'GK'}, {name:'Colin Calderwood',pos:'DF'}, {name:'David Hirst',pos:'ST'}
+      {name:'Faustino Asprilla',pos:'ST'}, {name:'David Hirst',pos:'ST'},
+      {name:'Giorgi Kinkladze',pos:'MF'}, {name:'David Batty',pos:'MF'}, {name:'Tim Sherwood',pos:'MF'}, {name:'Nolberto Solano',pos:'MF'},
+      {name:'Gary Pallister',pos:'DF'}, {name:'Graeme Le Saux',pos:'DF'}, {name:'Andy Hinchcliffe',pos:'DF'}, {name:'Nigel Winterburn',pos:'DF'}, {name:'Colin Calderwood',pos:'DF'},
+      {name:'Mark Bosnich',pos:'GK'}
     ]
   },
   {
     id: 'bareham', name: 'Bareham', fullname: "For Sure", players: 14, spent: 31.0, remaining: 9.0, rating: 'A',
-    analysis: "Bareham had a storming Round 3. Getting Lee Sharpe and Uwe Rösler for peanuts is outrageous value. He is now the richest man in the league relative to his needs.",
+    analysis: "The Value King. Lee Sharpe for £2.8m and Uwe Rösler for £2.5m is outrageous business. Assembly a squad that looks like it was curated by a man with genuine football feeling.",
     squad: [
-      {name:'Dwight Yorke',pos:'ST'}, {name:'Gary Speed',pos:'MF'}, {name:'Stig Inge Bjørnbye',pos:'DF'}, {name:'Andy Sinton',pos:'MF'}, {name:'Peter Beagrie',pos:'MF'}, {name:'Rob Jones',pos:'DF'}, {name:'Savo Milošević',pos:'ST'}, {name:'Branco',pos:'DF'}, {name:'Chris Bart-Williams',pos:'MF'}, {name:'Daniel Amokachi',pos:'ST'}, {name:'David May',pos:'DF'}, {name:'Lee Sharpe',pos:'MF'}, {name:'Uwe Rösler',pos:'ST'}
+      {name:'Dwight Yorke',pos:'ST'}, {name:'Savo Milosevic',pos:'ST'}, {name:'Daniel Amokachi',pos:'ST'}, {name:'Uwe Rösler',pos:'ST'},
+      {name:'Gary Speed',pos:'MF'}, {name:'Andy Sinton',pos:'MF'}, {name:'Peter Beagrie',pos:'MF'}, {name:'Chris Bart-Williams',pos:'MF'}, {name:'Lee Sharpe',pos:'MF'},
+      {name:'Stig Inge Bjornbye',pos:'DF'}, {name:'Rob Jones',pos:'DF'}, {name:'Branco',pos:'DF'}, {name:'David May',pos:'DF'}
     ]
   },
   {
     id: 'barber', name: 'Barber', fullname: "Sonnet FC", players: 12, spent: 17.9, remaining: 22.1, rating: 'B',
-    analysis: "Barber is currently sitting on £22.1m. He spent Round 3 picking up Alan Stubbs and John Salako. At some point, you have to buy a Ferrari if you want to win the race.",
+    analysis: "Sitting on £22.1m. Alan Stubbs and John Salako are sensible, but Barber needs to buy a Ferrari if he wants to win the race. Unspent cash doesn't score points.",
     squad: [
-      {name:'David Beckham',pos:'MF'}, {name:'Jamie Redknapp',pos:'MF'}, {name:'Kevin Pressman',pos:'GK'}, {name:'Steve Watson',pos:'DF'}, {name:'Paul Merson',pos:'MF'}, {name:'Ray Parlour',pos:'MF'}, {name:'Shaka Hislop',pos:'GK'}, {name:'Sol Campbell',pos:'DF'}, {name:'Alan Stubbs',pos:'DF'}, {name:'John Salako',pos:'MF'}, {name:'Lee Hendrie',pos:'MF'}, {name:'Noel Whelan',pos:'ST'}
+      {name:'Noel Whelan',pos:'ST'},
+      {name:'David Beckham',pos:'MF'}, {name:'Jamie Redknapp',pos:'MF'}, {name:'Paul Merson',pos:'MF'}, {name:'Ray Parlour',pos:'MF'}, {name:'John Salako',pos:'MF'}, {name:'Lee Hendrie',pos:'MF'},
+      {name:'Steve Watson',pos:'DF'}, {name:'Sol Campbell',pos:'DF'}, {name:'Alan Stubbs',pos:'DF'},
+      {name:'Kevin Pressman',pos:'GK'}, {name:'Shaka Hislop',pos:'GK'}
     ]
   },
   {
     id: 'hodgson', name: 'Hodgson', fullname: "Not Sure", players: 12, spent: 37.2, remaining: 2.8, rating: 'A',
-    analysis: "Added Earl Barrett and Peter Ndlovu, cementing his status as the king of the workhorse squad. Between Andy Cole, Sutton, and Ndlovu, he has a scary strike force.",
+    analysis: "Big, strong, and direct. Andy Cole and Chris Sutton will bully people in the air. Peter Ndlovu is a great 'Plan C' off the bench. Needs a bit more depth in defense.",
     squad: [
-      {name:'Steve McManaman',pos:'MF'}, {name:'Mark Crossley',pos:'GK'}, {name:'Chris Perry',pos:'DF'}, {name:'Dejan Stefanovic',pos:'DF'}, {name:'Ian Woan',pos:'MF'}, {name:'Warren Barton',pos:'DF'}, {name:'Anders Limpar',pos:'MF'}, {name:'Andy Cole',pos:'ST'}, {name:'Chris Sutton',pos:'ST'}, {name:'Dennis Wise',pos:'MF'}, {name:'Earl Barrett',pos:'DF'}, {name:'Peter Ndlovu',pos:'ST'}
+      {name:'Andy Cole',pos:'ST'}, {name:'Chris Sutton',pos:'ST'}, {name:'Peter Ndlovu',pos:'ST'},
+      {name:'Steve McManaman',pos:'MF'}, {name:'Ian Woan',pos:'MF'}, {name:'Anders Limpar',pos:'MF'}, {name:'Dennis Wise',pos:'MF'},
+      {name:'Chris Perry',pos:'DF'}, {name:'Dejan Stefanovic',pos:'DF'}, {name:'Warren Barton',pos:'DF'}, {name:'Earl Barrett',pos:'DF'},
+      {name:'Mark Crossley',pos:'GK'}
     ]
   },
   {
     id: 'kerr', name: 'Kerr', fullname: "Do Women Prefer Flowers to Seaman?", players: 10, spent: 36.5, remaining: 3.5, rating: 'C',
-    analysis: "Spent his remaining pennies on Graham Stuart and Phil Neville. It’s the fantasy equivalent of fixing a hole in the Titanic with a piece of chewing gum.",
+    analysis: "The math is terrifying. Fowler and Ferdinand need to score 4 every week because the defense is made of hopeful wishes. Phil Neville is a smart, cheap utility pick.",
     squad: [
-      {name:'Robbie Fowler',pos:'ST'}, {name:'Les Ferdinand',pos:'ST'}, {name:'Peter Beardsley',pos:'MF'}, {name:'Stuart Ripley',pos:'MF'}, {name:'Craig Hignett',pos:'MF'}, {name:'John Scales',pos:'DF'}, {name:'Lee Dixon',pos:'DF'}, {name:'Alan Kimble',pos:'DF'}, {name:'Graham Stuart',pos:'MF'}, {name:'Phil Neville',pos:'DF'}
+      {name:'Robbie Fowler',pos:'ST'}, {name:'Les Ferdinand',pos:'ST'},
+      {name:'Peter Beardsley',pos:'MF'}, {name:'Stuart Ripley',pos:'MF'}, {name:'Craig Hignett',pos:'MF'}, {name:'Graham Stuart',pos:'MF'},
+      {name:'John Scales',pos:'DF'}, {name:'Lee Dixon',pos:'DF'}, {name:'Alan Kimble',pos:'DF'}, {name:'Phil Neville',pos:'DF'}
     ]
   },
   {
     id: 'holt', name: 'Holt', fullname: "Kalima Shakhtar D", players: 14, spent: 31.1, remaining: 8.9, rating: 'S',
-    analysis: "Took the round off, presumably to count the £8.9m he still has sitting in his vault. He already has a rock-solid defense and the best keeper in the league.",
+    analysis: "Silent assassin. High floor ratings (Southgate, Albert) and the best keeper in the league (Flowers). With £8.9m left, he can still buy two genuine starters.",
     squad: [
-      {name:'Tim Flowers',pos:'GK'}, {name:'Gareth Southgate',pos:'DF'}, {name:'Steve Staunton',pos:'DF'}, {name:'Philippe Albert',pos:'DF'}, {name:'Jason McAteer',pos:'DF'}, {name:'Chris Armstrong',pos:'ST'}, {name:'Øyvind Leonhardsen',pos:'MF'}, {name:'Ruel Fox',pos:'MF'}, {name:'Steve Stone',pos:'MF'}, {name:'Andy Townsend',pos:'MF'}, {name:'Dean Holdsworth',pos:'ST'}, {name:'Des Lyttle',pos:'DF'}, {name:'Gary Charles',pos:'DF'}, {name:'Ian Walker',pos:'GK'}
+      {name:'Chris Armstrong',pos:'ST'}, {name:'Dean Holdsworth',pos:'ST'},
+      {name:'Oyvind Leonhardsen',pos:'MF'}, {name:'Ruel Fox',pos:'MF'}, {name:'Steve Stone',pos:'MF'}, {name:'Andy Townsend',pos:'MF'},
+      {name:'Gareth Southgate',pos:'DF'}, {name:'Steve Staunton',pos:'DF'}, {name:'Philippe Albert',pos:'DF'}, {name:'Jason McAteer',pos:'DF'}, {name:'Des Lyttle',pos:'DF'}, {name:'Gary Charles',pos:'DF'},
+      {name:'Tim Flowers',pos:'GK'}, {name:'Ian Walker',pos:'GK'}
     ]
   },
   {
     id: 'smyth', name: 'Smyth', fullname: "I Will Love It If We Beat Them United", players: 12, spent: 34.25, remaining: 5.75, rating: 'B',
-    analysis: "Smyth remained inactive in Round 3, which is brave considering his squad is still essentially Alan Shearer and some guys he met at the pub.",
+    analysis: "Relying on the World's Most Expensive Calf Muscles. Shearer is a guarantee, but the supporting cast is modest. Needs reliable midfielders in the final phase.",
     squad: [
-      {name:'Alan Shearer',pos:'ST'}, {name:'Dion Dublin',pos:'ST'}, {name:'Nick Barmby',pos:'MF'}, {name:'Phil Babb',pos:'DF'}, {name:'Francis Benali',pos:'DF'}, {name:'John Beresford',pos:'DF'}, {name:'Luděk Mikloško',pos:'GK'}, {name:'Michael Dubbery',pos:'DF'}, {name:'Trevor Sinclair',pos:'MF'}, {name:'Dan Petrescu',pos:'MF'}, {name:'Julian Joachim',pos:'ST'}, {name:'Stephen Carr',pos:'DF'}
+      {name:'Alan Shearer',pos:'ST'}, {name:'Dion Dublin',pos:'ST'}, {name:'Julian Joachim',pos:'ST'},
+      {name:'Nick Barmby',pos:'MF'}, {name:'Trevor Sinclair',pos:'MF'}, {name:'Dan Petrescu',pos:'MF'},
+      {name:'Phil Babb',pos:'DF'}, {name:'Francis Benali',pos:'DF'}, {name:'John Beresford',pos:'DF'}, {name:'Michael Dubbery',pos:'DF'}, {name:'Stephen Carr',pos:'DF'},
+      {name:'Ludek Miklosko',pos:'GK'}
     ]
   }
 ];
 
 const bidsR3 = [
-  {player:'David Hirst',winner:'Roach',price:'£4.1m'}, {player:'Efan Ekoku',winner:'Davies',price:'£3.3m'},
-  {player:'Kevin Campbell',winner:'Davies',price:'£3.1m'}, {player:'Lee Sharpe',winner:'Bareham',price:'£2.8m'},
-  {player:'Uwe Rösler',winner:'Bareham',price:'£2.5m'}, {player:'Pavel Srníček',winner:'Cotton',price:'£2.4m'},
-  {player:'Andy Impey',winner:'Masterman',price:'£2.2m'}, {player:'Jeff Kenna',winner:'Davies',price:'£2.2m'},
-  {player:'Dimitri Kharine',winner:'Davies',price:'£2.1m'}, {player:'John Spencer',winner:'Davies',price:'£2.1m'},
-  {player:'Daniel Amokachi',winner:'Bareham',price:'£2.0m'}, {player:'David May',winner:'Bareham',price:'£2.0m'},
-  {player:'Colin Cooper',winner:'Masterman',price:'£1.9m'}, {player:'Neville Southall',winner:'Meyers',price:'£1.8m'},
-  {player:'Stan Lazaridis',winner:'Masterman',price:'£1.7m'}, {player:'Gary Kelly',winner:'Cotton',price:'£1.2m'},
-  {player:'David Wetherall',winner:'Masterman',price:'£1.2m'}, {player:'Lars Bohinen',winner:'Davies',price:'£1.2m'},
-  {player:'Slaven Bilić',winner:'Meyers',price:'£1.2m'}, {player:'Steve Chettle',winner:'Masterman',price:'£1.2m'},
-  {player:'Carlton Palmer',winner:'Masterman',price:'£1.0m'}, {player:'Darren Peacock',winner:'Meyers',price:'£1.0m'},
-  {player:'Peter Ndlovu',winner:'Hodgson',price:'£0.9m'}, {player:'Niall Quinn',winner:'Cotton',price:'£0.7m'},
-  {player:'Earl Barrett',winner:'Hodgson',price:'£0.6m'}, {player:'John Salako',winner:'Barber',price:'£0.6m'},
-  {player:'Graham Stuart',winner:'Kerr',price:'£0.5m'}, {player:'Alan Stubbs',winner:'Barber',price:'£0.3m'},
-  {player:'John Moncur',winner:'Davies',price:'£0.3m'}, {player:'Lee Hendrie',winner:'Barber',price:'£0.3m'},
-  {player:'Noel Whelan',winner:'Barber',price:'£0.3m'}, {player:'Phil Neville',winner:'Kerr',price:'£0.2m'},
-  {player:'Alan Kimble',winner:'Kerr',price:'£0.1m'}, {player:'Alf-Inge Håland',winner:'Meyers',price:'£0.1m'},
-  {player:'Branco',winner:'Bareham',price:'£0.1m'}, {player:'Chris Bart-Williams',winner:'Bareham',price:'£0.1m'},
-  {player:'Darren Huckerby',winner:'Cotton',price:'£0.1m'}, {player:'Ian Rush',winner:'Meyers',price:'£0.1m'},
-  {player:'Colin Calderwood',winner:'Roach',price:'£0.0m'}
+  {player:'David Hirst',club:'Sheff Wed',pos:'ST',winner:'Roach',price:'£4.1m'},
+  {player:'Efan Ekoku',club:'Wimbledon',pos:'ST',winner:'Davies',price:'£3.3m'},
+  {player:'Kevin Campbell',club:'Nottm Forest',pos:'ST',winner:'Davies',price:'£3.1m'},
+  {player:'Lee Sharpe',club:'Man Utd',pos:'MF',winner:'Bareham',price:'£2.8m'},
+  {player:'Uwe Rösler',club:'Man City',pos:'ST',winner:'Bareham',price:'£2.5m'},
+  {player:'Pavel Srníček',club:'Newcastle',pos:'GK',winner:'Cotton',price:'£2.4m'},
+  {player:'Andy Impey',club:'QPR',pos:'MF',winner:'Masterman',price:'£2.2m'},
+  {player:'Jeff Kenna',club:'Blackburn',pos:'DF',winner:'Davies',price:'£2.2m'},
+  {player:'Dimitri Kharine',club:'Chelsea',pos:'GK',winner:'Davies',price:'£2.1m'},
+  {player:'John Spencer',club:'Chelsea',pos:'ST',winner:'Davies',price:'£2.1m'},
+  {player:'Daniel Amokachi',club:'Everton',pos:'ST',winner:'Bareham',price:'£2.0m'},
+  {player:'David May',club:'Man Utd',pos:'DF',winner:'Bareham',price:'£2.0m'},
+  {player:'Colin Cooper',club:'Nottm Forest',pos:'DF',winner:'Masterman',price:'£1.9m'},
+  {player:'Neville Southall',club:'Everton',pos:'GK',winner:'Meyers',price:'£1.8m'},
+  {player:'Stan Lazaridis',club:'West Ham',pos:'MF',winner:'Masterman',price:'£1.7m'},
+  {player:'David Wetherall',club:'Leeds',pos:'DF',winner:'Masterman',price:'£1.2m'},
+  {player:'Slaven Bilić',club:'West Ham',pos:'DF',winner:'Meyers',price:'£1.2m'},
+  {player:'Steve Chettle',club:'Nottm Forest',pos:'DF',winner:'Masterman',price:'£1.2m'},
+  {player:'Lars Bohinen',club:'Blackburn',pos:'MF',winner:'Davies',price:'£1.2m'},
+  {player:'Gary Kelly',club:'Leeds',pos:'DF',winner:'Cotton',price:'£1.2m'},
+  {player:'Darren Peacock',club:'Newcastle',pos:'DF',winner:'Meyers',price:'£1.0m'},
+  {player:'Carlton Palmer',club:'Leeds',pos:'MF',winner:'Masterman',price:'£1.0m'},
+  {player:'Peter Ndlovu',club:'Coventry',pos:'ST',winner:'Hodgson',price:'£0.9m'},
+  {player:'Niall Quinn',club:'Man City',pos:'ST',winner:'Cotton',price:'£0.7m'},
+  {player:'John Salako',club:'Coventry',pos:'MF',winner:'Barber',price:'£0.6m'},
+  {player:'Earl Barrett',club:'Everton',pos:'DF',winner:'Hodgson',price:'£0.6m'},
+  {player:'Graham Stuart',club:'Everton',pos:'MF',winner:'Kerr',price:'£0.5m'},
+  {player:'Alan Stubbs',club:'Bolton',pos:'DF',winner:'Barber',price:'£0.3m'},
+  {player:'Lee Hendrie',club:'Aston Villa',pos:'MF',winner:'Barber',price:'£0.3m'},
+  {player:'Noel Whelan',club:'Coventry',pos:'ST',winner:'Barber',price:'£0.3m'},
+  {player:'John Moncur',club:'West Ham',pos:'MF',winner:'Davies',price:'£0.3m'},
+  {player:'Phil Neville',club:'Man Utd',pos:'DF',winner:'Kerr',price:'£0.2m'},
+  {player:'Alan Kimble',club:'Wimbledon',pos:'DF',winner:'Kerr',price:'£0.1m'},
+  {player:'Alf-Inge Haaland',club:'Nottm Forest',pos:'MF',winner:'Meyers',price:'£0.1m'},
+  {player:'Ian Rush',club:'Liverpool',pos:'ST',winner:'Meyers',price:'£0.1m'},
+  {player:'Branco',club:'Middlesbrough',pos:'DF',winner:'Bareham',price:'£0.1m'},
+  {player:'Chris Bart-Williams',club:'Nottm Forest',pos:'MF',winner:'Bareham',price:'£0.1m'},
+  {player:'Darren Huckerby',club:'Newcastle',pos:'ST',winner:'Cotton',price:'£0.1m'},
+  {player:'Colin Calderwood',club:'Tottenham',pos:'DF',winner:'Roach',price:'£0.0m'}
 ];
 
-const bidsR2 = [{player:'Stan Collymore',winner:'Meyers',price:'£12.0m'},{player:'Andy Cole',winner:'Hodgson',price:'£11.0m'},{player:'Chris Sutton',winner:'Hodgson',price:'£11.0m'},{player:'Rob Lee',winner:'Rowe',price:'£9.1m'}];
-const bidsR1 = [{player:'Robbie Fowler',winner:'Kerr',price:'£18.9m'},{player:'Alan Shearer',winner:'Smyth',price:'£15.0m'},{player:'Les Ferdinand',winner:'Kerr',price:'£14.2m'}];
+const bidsR2 = [
+  {player:'Stan Collymore',club:'Liverpool',pos:'ST',winner:'Meyers',price:'£12.0m'},
+  {player:'Andy Cole',club:'Man Utd',pos:'ST',winner:'Hodgson',price:'£11.0m'},
+  {player:'Chris Sutton',club:'Blackburn',pos:'ST',winner:'Hodgson',price:'£11.0m'},
+  {player:'Rob Lee',club:'Newcastle',pos:'MF',winner:'Rowe',price:'£9.1m'},
+  {player:'Mark Bosnich',club:'Aston Villa',pos:'GK',winner:'Roach',price:'£4.0m'},
+  {player:'Paul Merson',club:'Arsenal',pos:'MF',winner:'Barber',price:'£3.7m'}
+];
 
-function showTab(id) {
+const bidsR1 = [
+  {player:'Robbie Fowler',club:'Liverpool',pos:'ST',winner:'Kerr',price:'£18.9m'},
+  {player:'Alan Shearer',club:'Blackburn',pos:'ST',winner:'Smyth',price:'£15.0m'},
+  {player:'Les Ferdinand',club:'Newcastle',pos:'ST',winner:'Kerr',price:'£14.2m'},
+  {player:'Matt Le Tissier',club:'Southampton',pos:'ST',winner:'Rowe',price:'£6.0m'}
+];
+
+const reviews = [
+  { id:'cotton', manager:'Cotton', fullname:"Real SoSoBad", review:"Cotton behaves like a man who knows where the trophy is kept. Pavel Srníček is a massive upgrade in goal. Niall Quinn for £0.7m is the ultimate tactical insurance policy.", good:"Srníček for £2.4m.", bad:"Only £0.1m left." },
+  { id:'masterman', manager:'Masterman', fullname:"Best Tomwich Albion", review:"Masterman assembly a wall that could survive a siege. Colin Cooper, Wetherall, and Chettle provide bruising protection. Total completion reached.", good:"Squad depth.", bad:"Defensive concentration." },
+  { id:'davies', manager:'Davies', fullname:"Paul McGregor's Mullet", review:"Corrective spree. Davies quadrupled down on strikers to fix his biggest weakness. Kevin Campbell and Ekoku provide the finish for Ginola.", good:"Attack solved.", bad:"Zero budget left." },
+  { id:'bareham', manager:'Bareham', fullname:"For Sure", review:"The Value King strikes again. Lee Sharpe and Uwe Rösler for peanuts is outrageous business. Bareham hasassembled a squad with genuine 90s soul.", good:"Financial health.", bad:"GK depth." },
+  { id:'meyers', manager:'Meyers', fullname:"I'll Be Back Four", review:"Hallelujah, he actually signed some defenders. Des Walker and Slaven Bilic ensure Schmeichel isn't just a target. Southall as a backup is pure greed.", good:"The spine.", bad:"Bench width." },
+  { id:'roach', manager:'Roach', fullname:"Eze Ya Later", review:"Quality over quantity. David Hirst and Faustino Asprilla is the strike force of dreams. Roach is betting on his first XI winning by Christmas.", good:"Hirst gamble.", bad:"12 players only." },
+  { id:'barber', manager:'Barber', fullname:"Sonnet FC", review:"Sitting on £22.1m. At some point, you have to buy a Ferrari if you want to win the race. Barber is currently hoarding enough cash to buy a small country.", good:"Stubbs for 0.3m.", bad:"Unspent cash." },
+  { id:'kerr', manager:'Kerr', fullname:"Do Women Prefer Flowers...", review:"Fixed a hole in the Titanic with gum. Graham Stuart and Phil Neville are the latest crew members. Fowler and Ferdinand carry the world on their shoulders.", good:"Phil Neville value.", bad:"No starting GK." },
+  { id:'hodgson', manager:'Hodgson', fullname:"Not Sure", review:"King of the workhorse squad. Cole, Sutton, and Ndlovu will bully center-backs. It's functional, physical, and frightening.", good:"Striker quality.", bad:"Defensive depth." },
+  { id:'rowe', manager:'Rowe', fullname:"Autoglass Trophy 1992", review:"Masterpiece built early. He spent Round 3 drinking Bordeaux while others panicked. flare heavy first XI that benchmarked the entire league.", good:"Confidence.", bad:"Bench bodies." },
+  { id:'holt', manager:'Holt', fullname:"Kalima Shakhtar D", review:"Silent assassin. Solid dependable backline and the best keeper in the league. With £8.9m left, he’s in the best position to pick up the leftovers.", good:"Finance.", bad:"Superstar attack." },
+  { id:'smyth', manager:'Smyth', fullname:"I Will Love It If We Beat Them United", review:"Alan Shearer and some guys he met at the pub. High risk, high reward strategy that relies on the World’s Most Expensive Calf Muscles.", good:"Shearer.", bad:"The supports." }
+];
+
+function showTab(id, event) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -351,24 +553,27 @@ function getGroupedSquadHtml(squad) {
 }
 
 function renderStandings() {
-  document.getElementById('standings-body').innerHTML = [...managers].sort((a,b) => b.players - a.players).map((m, i) => `
-    <tr onclick='openModal(${JSON.stringify(m)})' style='cursor:pointer'>
-      <td>${i+1}</td><td><b>${m.name}</b></td><td>${m.players}</td><td>£${m.spent}m</td>
+  const tbody = document.getElementById('standings-body');
+  tbody.innerHTML = managers.sort((a,b) => b.players - a.players).map((m, i) => `
+    <tr style="cursor:pointer" onclick='openModal(${JSON.stringify(m)})'>
+      <td>${i+1}</td><td><div class="manager-name">${m.name}</div><div class="team-name">${m.fullname}</div></td><td>${m.players}</td><td>£${m.spent}m</td>
       <td><div class="budget-bar-wrap"><div class="budget-bar"><div class="budget-fill" style="width:${(m.remaining/40)*100}%"></div></div><span class="budget-val">£${m.remaining}m</span></div></td>
       <td><span class="rating-badge rating-${m.rating.toLowerCase()}">${m.rating}</span></td>
     </tr>`).join('');
 }
 
 function renderOverviewCards() {
-  document.getElementById('overview-cards').innerHTML = managers.map(m => `
+  const grid = document.getElementById('overview-cards');
+  grid.innerHTML = managers.map(m => `
     <div class="manager-card" onclick='openModal(${JSON.stringify(m)})'>
       <div class="card-header"><div class="card-manager">${m.fullname}</div><span class="rating-badge rating-${m.rating.toLowerCase()}">${m.rating}</span></div>
-      <div class="card-body"><div class="card-stats"><div><label>Players</label><value>${m.players}</value></div><div><label>Budget</label><value>£${m.remaining}m</value></div></div></div>
+      <div class="card-body"><div class="card-stats"><div class="stat-item"><label>Players</label><value>${m.players}</value></div><div class="stat-item"><label>Budget</label><value>£${m.remaining}m</value></div></div></div>
     </div>`).join('');
 }
 
 function renderSquads() {
-  document.getElementById('squads-grid').innerHTML = managers.map(m => `
+  const grid = document.getElementById('squads-grid');
+  grid.innerHTML = managers.map(m => `
     <div class="manager-card" onclick='openModal(${JSON.stringify(m)})'>
       <div class="card-header"><div class="card-manager">${m.fullname}</div></div>
       <div class="card-body">${getGroupedSquadHtml(m.squad)}</div>
@@ -377,13 +582,14 @@ function renderSquads() {
 
 function renderBids(list, id) {
   const body = document.getElementById(id);
-  if (body) body.innerHTML = list.map(b => `<tr><td><b>${b.player}</b></td><td>${b.winner}</td><td><span class="bid-price">${b.price}</span></td><td><span class="won-tag">WON</span></td></tr>`).join('');
+  if (body) body.innerHTML = list.map(b => `<tr><td><b>${b.player}</b></td><td>${b.club || '-'}</td><td>${posTag(b.pos || 'ST')}</td><td>${b.winner}</td><td><span class="bid-price">${b.price}</span></td><td><span class="won-tag">WON</span></td></tr>`).join('');
 }
 
 function renderReviews() {
-  document.getElementById('reviews-container').innerHTML = managers.map(m => `
-    <div class="review-card"><div class="review-header"><div class="review-manager">${m.fullname}</div></div>
-    <div class="review-body"><p class="review-text">${m.analysis}</p></div></div>`).join('');
+  const container = document.getElementById('reviews-container');
+  container.innerHTML = reviews.map(r => `
+    <div class="review-card"><div class="review-header"><div class="review-manager">${r.fullname}</div></div>
+    <div class="review-body"><p class="review-text">${r.review}</p><div class="quote-box"><div class="quote-label">Best Thing</div>${r.good}</div><div class="quote-box"><div class="quote-label">Weakness</div>${r.bad}</div></div></div>`).join('');
 }
 
 function openModal(m) {
@@ -402,11 +608,7 @@ function closeModal(e) { if(e.target.classList.contains('modal-overlay')) closeM
 function filterSquads() {
   const q = document.getElementById('squad-search').value.toLowerCase();
   const filtered = managers.filter(m => m.fullname.toLowerCase().includes(q) || m.squad.some(p => p.name.toLowerCase().includes(q)));
-  document.getElementById('squads-grid').innerHTML = filtered.map(m => `
-    <div class="manager-card" onclick='openModal(${JSON.stringify(m)})'>
-      <div class="card-header"><div class="card-manager">${m.fullname}</div></div>
-      <div class="card-body">${getGroupedSquadHtml(m.squad)}</div>
-    </div>`).join('');
+  document.getElementById('squads-grid').innerHTML = filtered.map(m => `<div class="manager-card" onclick='openModal(${JSON.stringify(m)})'><div class="card-header"><div class="card-manager">${m.fullname}</div></div><div class="card-body">${getGroupedSquadHtml(m.squad)}</div></div>`).join('');
 }
 
 renderStandings();
